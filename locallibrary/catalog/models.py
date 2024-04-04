@@ -77,6 +77,8 @@ class BookInstance(models.Model):
     imprint = models.CharField(max_length=200)
     due_back = models.DateField(null=True, blank=True)
     borrower = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
+    language=models.CharField(max_length=50,default="English")
+
     @property
     def is_overdue(self):
         """Determines if the book is overdue based on due date and current date."""
