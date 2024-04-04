@@ -44,6 +44,13 @@ class BookDetailView(generic.DetailView):
     model = Book
     paginate_by = 10
 
+class AuthorListView(generic.ListView):
+    model=Author
+
+class AuthorDetailView(generic.DetailView):
+    model=Author
+    paginate_by = 10
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 class LoanedBooksByUserListView(LoginRequiredMixin,generic.ListView):
